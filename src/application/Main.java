@@ -13,36 +13,40 @@ public class Main {
 
         System.out.println("CENTRAL AUTOPEÇAS");
         System.out.println("");
+
         System.out.print("Digite seu nome: ");
         String nome = sc.nextLine();
+
         System.out.printf("%nOlá, %s Você deseja cadastrar alguma peça? (s/n) ", nome);
         char escolha = sc.next().charAt(0);
+
         if (escolha == 's') {
             System.out.print("Digite o ID da peça: ");
             pecas.setID(sc.nextInt());
             System.out.print("Digite o nome da peça: ");
             sc.nextLine();
-            pecas.setNome(sc.next());
+            pecas.setNome(sc.nextLine());
             System.out.print("Deseja adcionar uma descrição? ");
             char escolhaDescricao = sc.next().charAt(0);
             if (escolhaDescricao == 's') {
                 sc.nextLine();
-                pecas.descricao = sc.nextLine();
+                pecas.setDescricao(sc.nextLine());
                 System.out.println("Descrição Adicionada com sucesso!");
             } else {
-                pecas.descricao = "Peça sem descrição";
+                pecas.setDescricao("Peça sem descrição");
             }
             System.out.println("Peça Cadastrada com sucesso!");
         }
+
         System.out.println("");
         System.out.print("Digite o ID da peça: ");
-        double procurar = sc.nextDouble();
+        int procurar = sc.nextInt();
+
         if (procurar == pecas.getID()) {
             System.out.println(pecas);
-
+        } else {
+            System.out.println("A peça com o ID " + procurar + " não está cadastrada!");
         }
-
-
         sc.close();
     }
 }

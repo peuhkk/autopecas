@@ -4,12 +4,15 @@ public class Pecas {
 
     private int IdPeca;
     private String nomePeca;
-    public String descricao;
+    private String descricao;
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
 
     public void setID(int ID) {
         this.IdPeca = ID;
     }
-
     public int getID() {
         return IdPeca;
     }
@@ -23,7 +26,7 @@ public class Pecas {
     }
 
     public String toString() {
-        return " Nome da peça: "
+        return "Nome da peça: "
                 + getNome()
                 + " Descrição: "
                 + descricao;
